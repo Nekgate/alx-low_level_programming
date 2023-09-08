@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
 *main - This is the Entry
-*Return: Return 0 (Success)
+*Return: it returns last digit
 */
 int main(void)
 {
