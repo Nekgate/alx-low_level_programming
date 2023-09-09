@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-*main - Prog prints different combinations of two digits
+*main - Program point different combinations of digits
 *Return: 0 (Success)
 */
 int main(void)
@@ -9,7 +9,8 @@ int main(void)
 	int tens = '0';
 
 	for (tens = '0'; tens <= '9'; tens++)
-	{
+
+		{
 		for (ones = '0'; ones <= '9'; ones++)
 		{
 			if (!((ones == tens) || (tens > ones)))
@@ -17,9 +18,9 @@ int main(void)
 				putchar(tens);
 				putchar(ones);
 				if (!(ones == '9' && tens == '8'))
-				{
-					putchar(',');
-					putchar(' ');
+				}
+				putchar(',');
+				putchar(' ');
 				}
 			}
 		}
