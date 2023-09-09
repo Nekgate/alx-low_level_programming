@@ -1,13 +1,13 @@
 #include <stdio.h>
 /**
 *main - My Entry program
-*Return: Return 0 (Success)
+*Return: Always 0 (Success)
 */
 int main(void)
 {
 	char c;
 
-	c = 'd';
+	c = 'z';
 	while
 		(c >= 'a') {
 			putchar(c);
