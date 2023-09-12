@@ -1,11 +1,20 @@
-#include <unistd.h>
-/** A program that prints _putchar
-*Return: 0
+#include "main.h"
+
+/**
+*Main -Entry point
+*Return: Always 0 (Success)
 */
-int main (void)
+
+int main(void)
 {
-	char str[] ("_putchar\n")
-	write(1, str sizesof(str) - 1);
-	
-	return 0;
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+_putchar('\n');
+return (0);
 }
