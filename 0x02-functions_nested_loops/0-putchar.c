@@ -1,8 +1,10 @@
 #include "main.h"
 
+
 /**
-*Main -Entry point
-*Return: Always 0 (Success)
+*main -Entry point of code,
+*
+*Return: Always 0
 */
 
 int main(void)
