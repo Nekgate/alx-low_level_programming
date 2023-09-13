@@ -1,40 +1,39 @@
 #include <stdio.h>
-
+#define LARGEST 10000000000
 /**
-*main - prints the first 98 fibonaci sequences
-* Return: 0
+*main - main block
+*Description: Find and print the first 98 fib numbers starting with 1 and 2.
+*Numbers should be coma and space separated.
+*Return: Always 0
 */
-
 int main(void)
 
 {
-	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, f2o = 0, tmpo = 0;
-	short int i = 1, initial0s;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int hold1, hold2, hold3;
+	int count;
 
-	while (i <= 98)
+	printf("%lu, %lu, ", bk1, bk2);
+	for (count = 2; count < 98; count++)
 	{
-		if (f1o > 0)
-			printf("%lu", f1o);
-		initial0s = numLength(mx) - 1 - numLength(f1);
-		while (f1o > 0 && initial0s > 0)
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
 		{
-			printf("%i", 0);
-			initial0s--;
+			hold1 = (bk1 + bk2) / LARGEST;
+			hold2 = (bk1 + bk2) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu%010lu", fr2, bk2);
 		}
-		printf("%lu", f1);
-
-		tmp = (f1 + f2) % mx;
-		tmpo = f1o + f2o + (f1 + f2) / mx;
-		f1 = f2;
-		f1o = f2o;
-		f2 = tmp;
-		f2o = tmpo;
-
-		if (i != 98)
-			printf(", ");
 		else
-			printf("\n");
-		i++;
+		{
+			hold2 = bk1 + bk2;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu", bk2);
+		}
+		if (count != 97)
+			printf(", ");
 	}
+	printf("\n");
 	return (0);
 }
