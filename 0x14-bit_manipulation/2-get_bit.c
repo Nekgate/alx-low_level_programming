@@ -9,11 +9,13 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int cover = 1UL << index;
 
-	if (index >= sizeof(unsigned long int) * 8)
-	{
+	int bit_num;
+
+	if (index > 63)
 		return (-1);
-	}
-	return (n & cover);
+
+	bit_num = (n >> index) & 1;
+
+	return (bit_num);
 }
