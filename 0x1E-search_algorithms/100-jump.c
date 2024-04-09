@@ -2,7 +2,7 @@
 #include "search_algos.h"
 
 /**
- * jump_search - This searches for value in a sorted array using a jump search.
+ * jump_search - This searches a value in a sorted array using a jump search.
  * @array: The array to search in.
  * @size: The length of the array.
  * @value: The value to look for.
@@ -24,7 +24,7 @@ int jump_search(int *array, size_t size, int value)
 		if (a >= size)
 			return (-1);
 	}
-	printf("Value found between indexes [%d] and [%d]\n", (int)b, *(array + b));
+	printf("Value found between indexes [%d] and [%d]\n", (int)a, (int)b);
 	b = b >= size ? size - 1 : b;
 	for (; (a <= b) && (*(array + a) <= value); a++)
 	{
